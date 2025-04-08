@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A lightweight personal Daily Reflection Journal app">
+    <meta name="theme-color" content="#4285f4">
+    <title>Daily Reflection Journal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="img/icon-192x192.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Reflection Journal</h1>
+            <button id="theme-toggle">🌙</button>
+        </header>
+
+        <main>
+            <section class="daily-entry">
+                <div class="bible-quote">
+                    <h2>Today's Bible Quote</h2>
+                    <blockquote id="bible-quote-text"></blockquote>
+                </div>
+
+                <div class="entry-form">
+                    <h2>Today's Reflection</h2>
+                    <p id="current-date"></p>
+
+                    <div class="mood-section">
+                        <h3>How was your day?</h3>
+                        <div class="rating-options">
+                            <label><input type="radio" name="mood-rating" value="1"> 1</label>
+                            <label><input type="radio" name="mood-rating" value="2"> 2</label>
+                            <label><input type="radio" name="mood-rating" value="3"> 3</label>
+                            <label><input type="radio" name="mood-rating" value="4"> 4</label>
+                            <label><input type="radio" name="mood-rating" value="5"> 5</label>
+                            <label><input type="radio" name="mood-rating" value="6"> 6</label>
+                            <label><input type="radio" name="mood-rating" value="7"> 7</label>
+                            <label><input type="radio" name="mood-rating" value="8"> 8</label>
+                            <label><input type="radio" name="mood-rating" value="9"> 9</label>
+                            <label><input type="radio" name="mood-rating" value="10"> 10</label>
+                        </div>
+                    </div>
+
+                    <div class="emotions-section">
+                        <h3>What emotions did you feel today?</h3>
+                        <div class="emotion-options">
+                            <label><input type="checkbox" name="emotions" value="happy"> Happy</label>
+                            <label><input type="checkbox" name="emotions" value="sad"> Sad</label>
+                            <label><input type="checkbox" name="emotions" value="angry"> Angry</label>
+                            <label><input type="checkbox" name="emotions" value="anxious"> Anxious</label>
+                            <label><input type="checkbox" name="emotions" value="calm"> Calm</label>
+                            <label><input type="checkbox" name="emotions" value="excited"> Excited</label>
+                            <label><input type="checkbox" name="emotions" value="tired"> Tired</label>
+                            <label><input type="checkbox" name="emotions" value="grateful"> Grateful</label>
+                            <label><input type="checkbox" name="emotions" value="frustrated"> Frustrated</label>
+                            <label><input type="checkbox" name="emotions" value="peaceful"> Peaceful</label>
+                        </div>
+                    </div>
+
+                    <div class="prayer-section">
+                        <h3>Did you pray today?</h3>
+                        <div class="prayer-options">
+                            <label><input type="radio" name="prayed-today" value="yes"> Yes</label>
+                            <label><input type="radio" name="prayed-today" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="image-upload">
+                        <h3>Add Images</h3>
+                        <input type="file" id="image-upload" accept="image/*" multiple>
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+
+                    <div class="actions">
+                        <button id="save-btn">Save Entry</button>
+                        <button id="clear-btn">Clear</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="journal-view">
+                <h2>Journal Entries</h2>
+                <div class="journal-controls">
+                    <button id="prev-page">← Previous</button>
+                    <input type="number" id="page-number" min="1" placeholder="Page #">
+                    <button id="go-to-page">Go</button>
+                    <button id="next-page">Next →</button>
+                </div>
+                <div class="journal-page">
+                    <div id="journal-content"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Daily Reflection Journal - Your thoughts, privately stored on your device</p>
+    </footer>
+
+    <script src="js/database.js"></script>
+    <script src="js/bible.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registered', reg))
+                .catch(err => console.error('Service Worker registration failed', err));
+        }
+    </script>
+</body>
+</html>

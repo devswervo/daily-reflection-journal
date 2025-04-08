@@ -1,0 +1,273 @@
+/* Base Styles */
+:root {
+    --primary-color: #4285f4;
+    --text-color: #333;
+    --bg-color: #fff;
+    --secondary-bg: #f5f5f5;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+.dark-theme {
+    --primary-color: #64b5f6;
+    --text-color: #e0e0e0;
+    --bg-color: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --border-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+/* Bible Quote Section */
+.bible-quote {
+    background-color: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.bible-quote blockquote {
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+/* Daily Entry Form */
+.daily-entry {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.entry-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.mood-section,
+.emotions-section,
+.prayer-section {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.rating-options,
+.emotion-options,
+.prayer-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.rating-options label,
+.emotion-options label,
+.prayer-options label {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-bg);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.rating-options label:hover,
+.emotion-options label:hover,
+.prayer-options label:hover {
+    background-color: var(--border-color);
+}
+
+/* Image Upload */
+.image-upload {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-container {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.delete-image-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Journal View */
+.journal-view {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.journal-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+#page-number {
+    width: 80px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.journal-page {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    min-height: 500px;
+    position: relative;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.journal-page::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--border-color);
+    opacity: 0.5;
+}
+
+.journal-entry {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.journal-entry h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.journal-entry .bible-quote {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--secondary-bg);
+    border-left: 4px solid var(--primary-color);
+}
+
+.entry-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.entry-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Buttons */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    opacity: 0.9;
+}
+
+button:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .journal-controls {
+        flex-wrap: wrap;
+    }
+    
+    .image-preview {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .entry-images {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
