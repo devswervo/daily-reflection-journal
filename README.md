@@ -1,1 +1,1 @@
-# Daily Reflection Journal\n\nA lightweight personal journal app for daily reflections.
+# Daily Reflection Journal: A lightweight personal journal app for daily reflections.
