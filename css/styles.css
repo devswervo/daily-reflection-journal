@@ -220,42 +220,50 @@ h1 {
     color: var(--text-color);
 }
 
-.prompts-section {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background-color: var(--secondary-bg);
+.entry-prompts {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--bg-secondary);
     border-radius: 8px;
 }
 
-.prompts-section h4 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+.entry-prompts .prompt {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.mood-rating,
-.emotions,
-.prayer-status {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    background-color: var(--bg-color);
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
+.entry-prompts .prompt:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.entry-prompts h4 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.entry-prompts p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    white-space: pre-wrap;
 }
 
 .entry-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .entry-images img {
-    width: 100%;
-    height: 200px;
+    max-width: 300px;
+    max-height: 300px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */

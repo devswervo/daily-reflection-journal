@@ -96,12 +96,33 @@ async function saveJournalEntry() {
     const prayedToday = document.querySelector('input[name="prayed-today"]:checked')?.value === 'yes';
     const bibleQuote = document.getElementById('bible-quote-text').textContent;
     
+    // Get prompts
+    const prompts = [
+        {
+            question: "What was the highlight of your day?",
+            answer: document.querySelector('textarea[name="prompt1"]').value
+        },
+        {
+            question: "What challenged you today?",
+            answer: document.querySelector('textarea[name="prompt2"]').value
+        },
+        {
+            question: "What are you grateful for today?",
+            answer: document.querySelector('textarea[name="prompt3"]').value
+        },
+        {
+            question: "What did you learn today?",
+            answer: document.querySelector('textarea[name="prompt4"]').value
+        }
+    ];
+    
     const entry = {
         date: new Date().toISOString(),
         moodRating,
         emotions,
         prayedToday,
-        bibleQuote
+        bibleQuote,
+        prompts
     };
     
     const images = Array.from(document.querySelectorAll('#image-preview img')).map(img => ({
@@ -123,6 +144,7 @@ async function saveJournalEntry() {
 function clearForm() {
     document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
     document.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false);
+    document.querySelectorAll('textarea').forEach(textarea => textarea.value = '');
     document.getElementById('image-preview').innerHTML = '';
 }
 
@@ -195,6 +217,22 @@ async function loadJournalPage(pageNumber) {
                 <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
             </div>
     `;
+    
+    // Add prompts if they exist
+    if (entry.prompts && entry.prompts.length > 0) {
+        html += '<div class="entry-prompts">';
+        entry.prompts.forEach(prompt => {
+            if (prompt.answer) {
+                html += `
+                    <div class="prompt">
+                        <h4>${prompt.question}</h4>
+                        <p>${prompt.answer}</p>
+                    </div>
+                `;
+            }
+        });
+        html += '</div>';
+    }
     
     // Add images section if there are images
     if (images && images.length > 0) {
