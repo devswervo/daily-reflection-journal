@@ -170,6 +170,10 @@ async function loadJournalPage(pageNumber) {
         return;
     }
     
+    // Get images for this entry
+    const images = await journalDB.getEntryImages(entry.id);
+    
+    // Format the date
     const date = new Date(entry.date);
     const formattedDate = date.toLocaleDateString(undefined, {
         weekday: 'long',
@@ -181,15 +185,21 @@ async function loadJournalPage(pageNumber) {
     let html = `
         <div class="journal-entry">
             <h3>${formattedDate}</h3>
-            <div class="bible-quote">${entry.bibleQuote}</div>
-            <div class="mood-rating">Mood: ${entry.moodRating}/10</div>
-            <div class="emotions">Emotions: ${entry.emotions.join(', ')}</div>
-            <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
+            <div class="bible-quote">
+                <blockquote>${entry.bibleQuote || 'No Bible quote for this day.'}</blockquote>
+            </div>
+            <div class="prompts-section">
+                <h4>Daily Reflection</h4>
+                <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
+                <div class="emotions">Emotions: ${entry.emotions?.join(', ') || 'None recorded'}</div>
+                <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
+            </div>
     `;
     
-    if (entry.images && entry.images.length > 0) {
+    // Add images section if there are images
+    if (images && images.length > 0) {
         html += '<div class="entry-images">';
-        entry.images.forEach(image => {
+        images.forEach(image => {
             html += `<img src="${image.data}" alt="Journal image">`;
         });
         html += '</div>';
