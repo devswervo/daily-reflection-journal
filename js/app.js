@@ -38,16 +38,20 @@ function displayCurrentDate() {
 }
 
 async function loadBibleQuote() {
-    const quoteElement = document.getElementById('bible-quote-text');
-    let quote = await journalDB.getBibleQuote();
-    
-    if (!quote) {
-        // If no quote exists for today, fetch a new one
-        quote = await fetchRandomBibleQuote();
-        await journalDB.saveBibleQuote(quote);
+    try {
+        const quote = await journalDB.getBibleQuote();
+        const bibleQuoteText = document.getElementById('bible-quote-text');
+        
+        if (quote) {
+            bibleQuoteText.textContent = quote;
+        } else {
+            // If no quote is found, use a default quote
+            bibleQuoteText.textContent = "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future. - Jeremiah 29:11";
+        }
+    } catch (error) {
+        console.error('Error loading Bible quote:', error);
+        document.getElementById('bible-quote-text').textContent = "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future. - Jeremiah 29:11";
     }
-    
-    quoteElement.textContent = quote;
 }
 
 async function fetchRandomBibleQuote() {
@@ -210,7 +214,7 @@ async function loadJournalPage(pageNumber) {
             <div class="bible-quote">
                 <blockquote>${entry.bibleQuote || 'No Bible quote for this day.'}</blockquote>
             </div>
-            <div class="prompts-section">
+            <div class="mood-section">
                 <h4>Daily Reflection</h4>
                 <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
                 <div class="emotions">Emotions: ${entry.emotions?.join(', ') || 'None recorded'}</div>
@@ -222,7 +226,7 @@ async function loadJournalPage(pageNumber) {
     if (entry.prompts && entry.prompts.length > 0) {
         html += '<div class="entry-prompts">';
         entry.prompts.forEach(prompt => {
-            if (prompt.answer) {
+            if (prompt.answer && prompt.answer.trim() !== '') {
                 html += `
                     <div class="prompt">
                         <h4>${prompt.question}</h4>
