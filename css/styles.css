@@ -832,3 +832,34 @@ textarea {
     background-color: var(--border-color);
     width: 100%;
 }
+
+/* Card Component - Unified Style */
+.card, .journal-entry, .journal-page, .daily-entry, .check-in-section, .reflection-section, .image-upload-container, .bible-quote {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+/* Journal Entry specific styles */
+.journal-entry {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+/* Journal Page specific styles */
+.journal-page {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 500px;
+    position: relative;
+}
+
+/* Bible Quote specific styles */
+.bible-quote {
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
