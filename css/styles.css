@@ -106,20 +106,28 @@ h1 {
 
 /* Bible Quote Section */
 .bible-quote {
-    background-color: #f8f9fa;
-    padding: 15px;
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
     border-radius: 8px;
-    margin-bottom: 20px;
-    border-left: 4px solid #6c757d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--card-shadow);
 }
 
 .bible-quote blockquote {
-    margin: 0;
-    font-style: italic;
-    color: #495057;
     font-size: 1.1rem;
-    line-height: 1.6;
+    font-style: italic;
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.verse-reference {
+    display: block;
+    text-align: right;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
 }
 
 /* Daily Entry Form */
