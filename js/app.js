@@ -56,13 +56,20 @@ async function loadBibleQuote() {
         }
         
         const bibleQuoteText = document.getElementById('bible-quote-text');
-        // Add quotation marks to the quote if they don't already exist
-        if (!quote.startsWith('"') && !quote.startsWith('"')) {
-            quote = `"${quote}`;
+        
+        // Ensure the quote has quotation marks
+        if (!quote.includes('"') && !quote.includes('"')) {
+            // If the quote doesn't have quotation marks, add them
+            const quoteParts = quote.split(' - ');
+            if (quoteParts.length > 1) {
+                // If there's a citation (e.g., " - Jeremiah 29:11")
+                quote = `"${quoteParts[0]}" - ${quoteParts[1]}`;
+            } else {
+                // If there's no citation
+                quote = `"${quote}"`;
+            }
         }
-        if (!quote.endsWith('"') && !quote.endsWith('"')) {
-            quote = `${quote}"`;
-        }
+        
         bibleQuoteText.textContent = quote;
     } catch (error) {
         console.error('Error loading Bible quote:', error);
@@ -73,11 +80,11 @@ async function loadBibleQuote() {
 async function fetchRandomBibleQuote() {
     // This is a placeholder. In a real app, you would fetch from a Bible API
     const quotes = [
-        "\"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.\" - Jeremiah 29:11",
-        "\"Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.\" - Joshua 1:9",
-        "\"Trust in the Lord with all your heart and lean not on your own understanding.\" - Proverbs 3:5",
-        "\"I can do all things through Christ who strengthens me.\" - Philippians 4:13",
-        "\"The Lord is my shepherd, I lack nothing.\" - Psalm 23:1"
+        "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future. - Jeremiah 29:11",
+        "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go. - Joshua 1:9",
+        "Trust in the Lord with all your heart and lean not on your own understanding. - Proverbs 3:5",
+        "I can do all things through Christ who strengthens me. - Philippians 4:13",
+        "The Lord is my shepherd, I lack nothing. - Psalm 23:1"
     ];
     return quotes[Math.floor(Math.random() * quotes.length)];
 }
