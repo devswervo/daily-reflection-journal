@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="img/icon-192x192.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -17,7 +20,7 @@
                 <h1>Daily Reflection Journal</h1>
                 <div class="date-display" id="current-date"></div>
             </div>
-            <button id="theme-toggle">🌙</button>
+            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </header>
 
         <main>
@@ -70,7 +73,7 @@
                     </div>
 
                     <div class="prompts-section">
-                        <h3>Daily Prompts</h3>
+                        <h2>Daily Prompts</h2>
                         <div class="prompt">
                             <h4>What was the highlight of your day?</h4>
                             <textarea name="prompt1" rows="3" placeholder="Write your answer here..."></textarea>
@@ -89,8 +92,10 @@
                         </div>
                     </div>
 
-                    <h2>Daily Reflection</h2>
-                    <textarea id="reflection" rows="6" placeholder="Write your thoughts here..."></textarea>
+                    <div class="reflection-section">
+                        <h2>Daily Reflection</h2>
+                        <textarea id="reflection" rows="6" placeholder="Write your thoughts here..."></textarea>
+                    </div>
 
                     <div class="image-upload">
                         <h3>Add Images</h3>
