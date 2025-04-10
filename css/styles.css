@@ -586,19 +586,34 @@ footer p:last-child {
     font-size: 1.5rem;
 }
 
+.check-in-section h3 {
+    color: var(--text-color);
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.check-in-section h3:first-of-type {
+    margin-top: 0;
+}
+
 .check-in-section .mood-section,
 .check-in-section .emotions-section,
 .check-in-section .prayer-section {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
     background-color: transparent;
     box-shadow: none;
     border: none;
 }
 
-.check-in-section .prayer-section {
+.check-in-section .rating-options,
+.check-in-section .emotion-options,
+.check-in-section .prayer-options {
+    margin-bottom: 1.5rem;
+}
+
+.check-in-section .prayer-options {
     margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
 }
