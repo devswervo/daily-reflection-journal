@@ -116,15 +116,9 @@ h1 {
     overflow: hidden;
 }
 
+/* Remove the decorative quotation marks */
 .bible-quote::before {
-    content: '"';
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    font-size: 5rem;
-    color: rgba(66, 133, 244, 0.1);
-    font-family: Georgia, serif;
-    line-height: 1;
+    display: none;
 }
 
 .bible-quote h2 {
@@ -147,15 +141,9 @@ h1 {
     z-index: 1;
 }
 
+/* Remove the decorative quotation mark at the end */
 .bible-quote blockquote::after {
-    content: '"';
-    position: absolute;
-    bottom: -20px;
-    right: 0;
-    font-size: 3rem;
-    color: rgba(66, 133, 244, 0.1);
-    font-family: Georgia, serif;
-    line-height: 1;
+    display: none;
 }
 
 /* Daily Entry Form */
