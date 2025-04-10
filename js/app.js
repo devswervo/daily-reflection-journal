@@ -40,15 +40,23 @@ function displayCurrentDate() {
 
 async function loadBibleQuote() {
     try {
-        const quote = await journalDB.getBibleQuote();
-        const bibleQuoteText = document.getElementById('bible-quote-text');
+        // Get today's date in YYYY-MM-DD format
+        const today = new Date().toISOString().split('T')[0];
         
-        if (quote) {
-            bibleQuoteText.textContent = quote;
-        } else {
-            // If no quote is found, use a default quote
-            bibleQuoteText.textContent = "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future. - Jeremiah 29:11";
+        // Try to get the Bible quote for today
+        let quote = await journalDB.getBibleQuote(today);
+        
+        // If no quote exists for today, generate a new one
+        if (!quote) {
+            // Get a random Bible quote
+            quote = await fetchRandomBibleQuote();
+            
+            // Save the quote for today
+            await journalDB.saveBibleQuote(quote, today);
         }
+        
+        const bibleQuoteText = document.getElementById('bible-quote-text');
+        bibleQuoteText.textContent = quote;
     } catch (error) {
         console.error('Error loading Bible quote:', error);
         document.getElementById('bible-quote-text').textContent = "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future. - Jeremiah 29:11";
