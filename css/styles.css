@@ -126,7 +126,7 @@ h1 {
     font-size: 1.1rem;
     line-height: 1.6;
     padding-left: 1rem;
-    border-left: 3px solid var(--primary-color);
+    border-left: none;
 }
 
 /* Daily Entry Form */
