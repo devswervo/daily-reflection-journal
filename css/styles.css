@@ -798,3 +798,12 @@ textarea {
         align-items: flex-start;
     }
 }
+
+/* Section Divider */
+.section-divider {
+    margin: 20px 0;
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    width: 100%;
+}
