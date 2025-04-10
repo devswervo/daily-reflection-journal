@@ -208,18 +208,18 @@ async function loadJournalPage(pageNumber) {
     
     // Process the Bible quote to ensure it has quotation marks
     let bibleQuote = entry.bibleQuote || 'No Bible quote for this day.';
+    let bibleReference = 'Psalm 23:1'; // Default reference
+    
+    // Extract reference if it exists in the format "text - reference"
+    if (bibleQuote.includes(' - ')) {
+        const parts = bibleQuote.split(' - ');
+        bibleQuote = parts[0];
+        bibleReference = parts[1];
+    }
     
     // Add quotation marks to the Bible quote if they don't already exist
     if (!bibleQuote.includes('"') && !bibleQuote.includes('"')) {
-        // If the quote doesn't have quotation marks, add them
-        const quoteParts = bibleQuote.split(' - ');
-        if (quoteParts.length > 1) {
-            // If there's a citation (e.g., " - Jeremiah 29:11")
-            bibleQuote = `"${quoteParts[0]}" - ${quoteParts[1]}`;
-        } else {
-            // If there's no citation
-            bibleQuote = `"${bibleQuote}"`;
-        }
+        bibleQuote = `"${bibleQuote}"`;
     }
     
     // Create a clean, unified layout with only the outermost container
@@ -228,6 +228,7 @@ async function loadJournalPage(pageNumber) {
         
         <div class="bible-quote">
             <blockquote>${bibleQuote}</blockquote>
+            <span class="verse-reference">${bibleReference}</span>
         </div>
         
         <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
