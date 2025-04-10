@@ -106,44 +106,20 @@ h1 {
 
 /* Bible Quote Section */
 .bible-quote {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 12px;
-    margin-bottom: 2.5rem;
-    border-left: 5px solid var(--primary-color);
-    box-shadow: var(--card-shadow);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Remove the decorative quotation marks */
-.bible-quote::before {
-    display: none;
-}
-
-.bible-quote h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.25rem;
-    font-weight: 700;
-    font-size: 1.75rem;
-    letter-spacing: -0.5px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #6c757d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .bible-quote blockquote {
-    font-style: italic;
-    color: var(--text-color);
-    font-size: 1.35rem;
-    line-height: 1.7;
-    padding-left: 1.5rem;
-    border-left: none;
     margin: 0;
-    position: relative;
-    z-index: 1;
-}
-
-/* Remove the decorative quotation mark at the end */
-.bible-quote blockquote::after {
-    display: none;
+    font-style: italic;
+    color: #495057;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 /* Daily Entry Form */
@@ -356,120 +332,97 @@ textarea:focus {
 }
 
 .journal-entry {
-    background: var(--background-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border-color);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.journal-entry h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-weight: 600;
+.entry-date {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.journal-entry p {
-    margin: 0.75rem 0;
-    line-height: 1.6;
+.bible-quote {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #6c757d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Remove boxes and lines from prompt answers */
-.journal-entry .prompt-answer {
-    margin: 1.5rem 0;
-    padding: 0;
-    border: none;
-    background: none;
-}
-
-.journal-entry .prompt-answer p {
+.bible-quote blockquote {
     margin: 0;
-    line-height: 1.6;
-    color: var(--text-color);
+    font-style: italic;
+    color: #495057;
     font-size: 1.1rem;
-}
-
-/* Keep boxes for daily reflection */
-.journal-entry .daily-reflection {
-    background: var(--secondary-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.25rem;
-    margin: 1rem 0;
-}
-
-.journal-entry .daily-reflection h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-}
-
-.entry-prompts {
-    margin: 1.25rem 0;
-    padding: 1.25rem;
-    background-color: var(--secondary-color);
-    border-radius: 8px;
-}
-
-/* Remove the horizontal lines and spacing for prompts */
-.entry-prompts .prompt {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.entry-prompts .prompt:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-/* Remove the question headings */
-.entry-prompts h4 {
-    display: none;
-}
-
-.entry-prompts p {
-    color: var(--text-color);
     line-height: 1.6;
-    white-space: pre-wrap;
+}
+
+.daily-reflection {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #6c757d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.mood-rating, .emotions, .prayer-status {
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.reflection-text {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #6c757d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.reflection-text p {
     margin: 0;
-    padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-    border: none;
+    line-height: 1.6;
+    color: #495057;
 }
 
-.mood-section {
-    margin: 1.25rem 0;
-    padding: 1.25rem;
-    background-color: var(--secondary-color);
-    border-radius: 8px;
+.prompt-answers {
+    margin-bottom: 20px;
 }
 
-.mood-rating,
-.emotions,
-.prayer-status {
-    margin: 0.75rem 0;
-    padding: 0.75rem;
-    background-color: var(--background-color);
+.prompt-answer {
+    background-color: #f8f9fa;
+    padding: 15px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+    border-left: 4px solid #6c757d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-answer p {
+    margin: 0;
+    line-height: 1.6;
+    color: #495057;
 }
 
 .entry-images {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin: 1.25rem 0;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .entry-images img {
-    max-width: 300px;
-    max-height: 300px;
-    object-fit: cover;
+    max-width: 200px;
     border-radius: 8px;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */
