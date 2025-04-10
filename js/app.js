@@ -233,14 +233,13 @@ async function loadJournalPage(pageNumber) {
             </div>
     `;
     
-    // Add prompts if they exist
+    // Add prompts if they exist - now without questions, just answers as paragraphs
     if (entry.prompts && entry.prompts.length > 0) {
         html += '<div class="entry-prompts">';
         entry.prompts.forEach(prompt => {
             if (prompt.answer && prompt.answer.trim() !== '') {
                 html += `
-                    <div class="prompt">
-                        <h4>${prompt.question}</h4>
+                    <div class="prompt-answer">
                         <p>${prompt.answer}</p>
                     </div>
                 `;

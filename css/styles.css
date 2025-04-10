@@ -389,14 +389,17 @@ textarea:focus {
 
 /* Remove boxes and lines from prompt answers */
 .journal-entry .prompt-answer {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     padding: 0;
     border: none;
     background: none;
 }
 
 .journal-entry .prompt-answer p {
-    margin: 0.5rem 0;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 1.1rem;
 }
 
 /* Keep boxes for daily reflection */
@@ -421,33 +424,32 @@ textarea:focus {
     border-radius: 8px;
 }
 
+/* Remove the horizontal lines and spacing for prompts */
 .entry-prompts .prompt {
-    margin-bottom: 1.25rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .entry-prompts .prompt:last-child {
-    border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
+/* Remove the question headings */
 .entry-prompts h4 {
-    color: var(--text-color);
-    margin-bottom: 0.75rem;
-    font-weight: 600;
+    display: none;
 }
 
 .entry-prompts p {
     color: var(--text-color);
-    line-height: 1.5;
+    line-height: 1.6;
     white-space: pre-wrap;
     margin: 0;
-    padding: 1rem;
-    background-color: var(--background-color);
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
 }
 
 .mood-section {
