@@ -1,0 +1,206 @@
+{
+  "january": {
+    "theme": "New Beginnings",
+    "verses": [
+      {
+        "text": "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
+        "reference": "Jeremiah 29:11"
+      },
+      {
+        "text": "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come.",
+        "reference": "2 Corinthians 5:17"
+      },
+      {
+        "text": "Forget the former things; do not dwell on the past. See, I am doing a new thing!",
+        "reference": "Isaiah 43:18-19"
+      }
+    ]
+  },
+  "february": {
+    "theme": "Love and Relationships",
+    "verses": [
+      {
+        "text": "Love is patient and kind; love does not envy or boast; it is not arrogant or rude.",
+        "reference": "1 Corinthians 13:4"
+      },
+      {
+        "text": "Above all, keep loving one another earnestly, since love covers a multitude of sins.",
+        "reference": "1 Peter 4:8"
+      },
+      {
+        "text": "We love because he first loved us.",
+        "reference": "1 John 4:19"
+      }
+    ]
+  },
+  "march": {
+    "theme": "Faith and Trust",
+    "verses": [
+      {
+        "text": "Trust in the Lord with all your heart, and do not lean on your own understanding.",
+        "reference": "Proverbs 3:5"
+      },
+      {
+        "text": "And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists.",
+        "reference": "Hebrews 11:6"
+      },
+      {
+        "text": "Now faith is the assurance of things hoped for, the conviction of things not seen.",
+        "reference": "Hebrews 11:1"
+      }
+    ]
+  },
+  "april": {
+    "theme": "Hope and Renewal",
+    "verses": [
+      {
+        "text": "But they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles.",
+        "reference": "Isaiah 40:31"
+      },
+      {
+        "text": "May the God of hope fill you with all joy and peace in believing.",
+        "reference": "Romans 15:13"
+      },
+      {
+        "text": "For I consider that the sufferings of this present time are not worth comparing with the glory that is to be revealed to us.",
+        "reference": "Romans 8:18"
+      }
+    ]
+  },
+  "may": {
+    "theme": "Gratitude and Joy",
+    "verses": [
+      {
+        "text": "Rejoice always, pray without ceasing, give thanks in all circumstances.",
+        "reference": "1 Thessalonians 5:16-18"
+      },
+      {
+        "text": "This is the day that the Lord has made; let us rejoice and be glad in it.",
+        "reference": "Psalm 118:24"
+      },
+      {
+        "text": "The joy of the Lord is your strength.",
+        "reference": "Nehemiah 8:10"
+      }
+    ]
+  },
+  "june": {
+    "theme": "Peace and Rest",
+    "verses": [
+      {
+        "text": "Peace I leave with you; my peace I give to you. Not as the world gives do I give to you.",
+        "reference": "John 14:27"
+      },
+      {
+        "text": "Come to me, all who labor and are heavy laden, and I will give you rest.",
+        "reference": "Matthew 11:28"
+      },
+      {
+        "text": "Be still, and know that I am God.",
+        "reference": "Psalm 46:10"
+      }
+    ]
+  },
+  "july": {
+    "theme": "Freedom and Purpose",
+    "verses": [
+      {
+        "text": "For freedom Christ has set us free; stand firm therefore, and do not submit again to a yoke of slavery.",
+        "reference": "Galatians 5:1"
+      },
+      {
+        "text": "I can do all things through him who strengthens me.",
+        "reference": "Philippians 4:13"
+      },
+      {
+        "text": "For we are his workmanship, created in Christ Jesus for good works.",
+        "reference": "Ephesians 2:10"
+      }
+    ]
+  },
+  "august": {
+    "theme": "Wisdom and Guidance",
+    "verses": [
+      {
+        "text": "If any of you lacks wisdom, let him ask God, who gives generously to all without reproach.",
+        "reference": "James 1:5"
+      },
+      {
+        "text": "Your word is a lamp to my feet and a light to my path.",
+        "reference": "Psalm 119:105"
+      },
+      {
+        "text": "The fear of the Lord is the beginning of wisdom, and the knowledge of the Holy One is insight.",
+        "reference": "Proverbs 9:10"
+      }
+    ]
+  },
+  "september": {
+    "theme": "Growth and Perseverance",
+    "verses": [
+      {
+        "text": "And let us not grow weary of doing good, for in due season we will reap, if we do not give up.",
+        "reference": "Galatians 6:9"
+      },
+      {
+        "text": "But grow in the grace and knowledge of our Lord and Savior Jesus Christ.",
+        "reference": "2 Peter 3:18"
+      },
+      {
+        "text": "Count it all joy, my brothers, when you meet trials of various kinds, for you know that the testing of your faith produces steadfastness.",
+        "reference": "James 1:2-3"
+      }
+    ]
+  },
+  "october": {
+    "theme": "Strength and Courage",
+    "verses": [
+      {
+        "text": "Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.",
+        "reference": "Joshua 1:9"
+      },
+      {
+        "text": "The Lord is my strength and my shield; in him my heart trusts, and I am helped.",
+        "reference": "Psalm 28:7"
+      },
+      {
+        "text": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you.",
+        "reference": "Isaiah 41:10"
+      }
+    ]
+  },
+  "november": {
+    "theme": "Thankfulness and Praise",
+    "verses": [
+      {
+        "text": "Give thanks to the Lord, for he is good, for his steadfast love endures forever.",
+        "reference": "Psalm 136:1"
+      },
+      {
+        "text": "Enter his gates with thanksgiving, and his courts with praise! Give thanks to him; bless his name!",
+        "reference": "Psalm 100:4"
+      },
+      {
+        "text": "Oh give thanks to the Lord; call upon his name; make known his deeds among the peoples!",
+        "reference": "1 Chronicles 16:8"
+      }
+    ]
+  },
+  "december": {
+    "theme": "Hope and Promise",
+    "verses": [
+      {
+        "text": "For to us a child is born, to us a son is given; and the government shall be upon his shoulder.",
+        "reference": "Isaiah 9:6"
+      },
+      {
+        "text": "The light shines in the darkness, and the darkness has not overcome it.",
+        "reference": "John 1:5"
+      },
+      {
+        "text": "Glory to God in the highest, and on earth peace among those with whom he is pleased!",
+        "reference": "Luke 2:14"
+      }
+    ]
+  }
+} 
