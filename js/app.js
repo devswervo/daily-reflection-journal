@@ -69,6 +69,9 @@ function setupEventListeners() {
     // Clear button
     document.getElementById('clear-btn').addEventListener('click', clearForm);
     
+    // Refresh prompts button
+    document.getElementById('refresh-prompts').addEventListener('click', loadRandomPrompts);
+    
     // Image upload
     document.getElementById('image-upload').addEventListener('change', handleImageUpload);
     
@@ -110,10 +113,6 @@ async function saveJournalEntry() {
         {
             question: "What are you grateful for today?",
             answer: document.querySelector('textarea[name="prompt3"]').value
-        },
-        {
-            question: "What did you learn today?",
-            answer: document.querySelector('textarea[name="prompt4"]').value
         }
     ];
     
@@ -263,4 +262,39 @@ async function loadJournalPage(pageNumber) {
     // Update navigation buttons
     document.getElementById('prev-page').disabled = pageNumber <= 1;
     document.getElementById('next-page').disabled = pageNumber >= totalPages;
+}
+
+async function loadRandomPrompts() {
+    try {
+        const response = await fetch('js/prompts.json');
+        const promptsData = await response.json();
+        
+        // Combine all prompts from different categories
+        const allPrompts = [
+            ...promptsData['self-reflection'].prompts,
+            ...promptsData['growth'].prompts,
+            ...promptsData['gratitude'].prompts
+        ];
+        
+        // Shuffle the prompts array
+        const shuffledPrompts = allPrompts.sort(() => Math.random() - 0.5);
+        
+        // Get the first 3 prompts
+        const selectedPrompts = shuffledPrompts.slice(0, 3);
+        
+        // Update the prompt questions and clear the answers
+        const promptElements = document.querySelectorAll('.prompt h4');
+        promptElements.forEach((element, index) => {
+            element.textContent = selectedPrompts[index];
+        });
+        
+        // Clear the textareas
+        document.querySelectorAll('.prompt textarea').forEach(textarea => {
+            textarea.value = '';
+        });
+        
+    } catch (error) {
+        console.error('Error loading prompts:', error);
+        alert('Error loading new prompts. Please try again.');
+    }
 }
