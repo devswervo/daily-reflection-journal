@@ -568,3 +568,37 @@ footer p:last-child {
 .reflection-section textarea {
     margin-top: 1rem;
 }
+
+/* Check-In Section */
+.check-in-section {
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 1.5rem;
+}
+
+.check-in-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.check-in-section .mood-section,
+.check-in-section .emotions-section,
+.check-in-section .prayer-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.check-in-section .prayer-section {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
