@@ -217,10 +217,8 @@ async function loadJournalPage(pageNumber) {
         bibleReference = parts[1];
     }
     
-    // Add quotation marks to the Bible quote if they don't already exist
-    if (!bibleQuote.includes('"') && !bibleQuote.includes('"')) {
-        bibleQuote = `"${bibleQuote}"`;
-    }
+    // Remove any existing quotation marks to ensure consistency
+    bibleQuote = bibleQuote.replace(/[""]/g, '');
     
     // Create a clean, unified layout with only the outermost container
     let html = `
