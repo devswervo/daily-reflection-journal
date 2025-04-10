@@ -4,13 +4,13 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    displayCurrentDate();
     initializeApp();
 });
 
 async function initializeApp() {
     // Initialize components
     initThemeToggle();
-    displayCurrentDate();
     loadBibleQuote();
     setupEventListeners();
     loadJournalPage(1);
@@ -33,8 +33,9 @@ function initThemeToggle() {
 
 function displayCurrentDate() {
     const dateElement = document.getElementById('current-date');
+    const now = new Date();
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    dateElement.textContent = new Date().toLocaleDateString(undefined, options);
+    dateElement.textContent = now.toLocaleDateString(undefined, options);
 }
 
 async function loadBibleQuote() {

@@ -52,15 +52,26 @@ header {
     margin-bottom: 2rem;
 }
 
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 h1 {
     color: var(--primary-color);
     font-size: 2rem;
 }
 
 .date-display {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: var(--primary-color);
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 /* Theme Toggle Button */
