@@ -260,6 +260,7 @@ async function loadJournalPage(pageNumber) {
         <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
         <div class="emotions">Emotions: ${entry.emotions?.join(', ') || 'None recorded'}</div>
         <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
+        <hr class="section-divider">
     `;
     
     // Add reflection text if it exists - as plain paragraph text
