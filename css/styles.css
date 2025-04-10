@@ -6,6 +6,8 @@
     --secondary-bg: #f5f5f5;
     --border-color: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --footer-bg: #f8f9fa;
+    --footer-text: #6c757d;
 }
 
 /* Dark Theme */
@@ -16,6 +18,8 @@
     --secondary-bg: #2d2d2d;
     --border-color: #404040;
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --footer-bg: #2d2d2d;
+    --footer-text: #adb5bd;
 }
 
 * {
@@ -326,4 +330,25 @@ button:disabled {
     .entry-images {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer p:last-child {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
 }
