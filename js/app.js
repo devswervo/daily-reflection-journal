@@ -103,54 +103,52 @@ function setupEventListeners() {
 }
 
 async function saveJournalEntry() {
-    const moodRating = document.querySelector('input[name="mood-rating"]:checked')?.value;
-    const emotions = Array.from(document.querySelectorAll('input[name="emotions"]:checked'))
-        .map(input => input.value);
-    const prayedToday = document.querySelector('input[name="prayed-today"]:checked')?.value === 'yes';
-    const bibleQuote = document.getElementById('bible-quote-text').textContent;
+    const form = document.getElementById('journal-form');
+    const formData = new FormData(form);
     
-    // Get prompts
-    const prompts = [
-        {
-            question: "What was the highlight of your day?",
-            answer: document.querySelector('textarea[name="prompt1"]').value
-        },
-        {
-            question: "What challenged you today?",
-            answer: document.querySelector('textarea[name="prompt2"]').value
-        },
-        {
-            question: "What are you grateful for today?",
-            answer: document.querySelector('textarea[name="prompt3"]').value
-        },
-        {
-            question: "What did you learn today?",
-            answer: document.querySelector('textarea[name="prompt4"]').value
-        }
-    ];
-    
+    // Get all form data
     const entry = {
         date: new Date().toISOString(),
-        moodRating,
-        emotions,
-        prayedToday,
-        bibleQuote,
-        prompts
+        moodRating: formData.get('mood-rating'),
+        emotions: Array.from(formData.getAll('emotions')),
+        prayedToday: formData.get('prayed-today') === 'yes',
+        prompts: {
+            prompt1: formData.get('prompt1'),
+            prompt2: formData.get('prompt2'),
+            prompt3: formData.get('prompt3')
+        },
+        reflection: formData.get('reflection'),
+        bibleQuote: document.getElementById('bible-quote-text').textContent
     };
     
-    const images = Array.from(document.querySelectorAll('#image-preview img')).map(img => ({
-        data: img.src,
-        type: img.dataset.type
-    }));
+    // Get images if any
+    const imageFiles = formData.getAll('images');
+    const images = [];
+    
+    for (const file of imageFiles) {
+        if (file.size > 0) {
+            const reader = new FileReader();
+            await new Promise((resolve) => {
+                reader.onload = (e) => {
+                    images.push({
+                        data: e.target.result,
+                        type: file.type
+                    });
+                    resolve();
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    }
     
     try {
         await journalDB.saveEntry(entry, images);
-        alert('Journal entry saved successfully!');
-        clearForm();
-        loadJournalPage(1);
+        showNotification('Journal entry saved successfully!', 'success');
+        form.reset();
+        loadBibleQuote();
     } catch (error) {
         console.error('Error saving entry:', error);
-        alert('Error saving journal entry. Please try again.');
+        showNotification('Error saving journal entry. Please try again.', 'error');
     }
 }
 
