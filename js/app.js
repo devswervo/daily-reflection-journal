@@ -312,19 +312,44 @@ async function loadJournalPage(pageNumber) {
 }
 
 async function loadRandomPrompts() {
+    const refreshButton = document.getElementById('refresh-prompts');
+    const originalButtonText = refreshButton.innerHTML;
+    
     try {
+        // Show loading state
+        refreshButton.innerHTML = '⌛';
+        refreshButton.disabled = true;
+        
         const response = await fetch('js/prompts.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const promptsData = await response.json();
         
-        // Combine all prompts from different categories
-        const allPrompts = [
-            ...promptsData['self-reflection'].prompts,
-            ...promptsData['growth'].prompts,
-            ...promptsData['gratitude'].prompts
-        ];
+        // Get all available categories
+        const categories = Object.keys(promptsData);
+        if (categories.length === 0) {
+            throw new Error('No prompt categories found');
+        }
         
-        // Shuffle the prompts array
-        const shuffledPrompts = allPrompts.sort(() => Math.random() - 0.5);
+        // Combine all prompts from available categories
+        const allPrompts = categories.reduce((acc, category) => {
+            if (promptsData[category] && promptsData[category].prompts) {
+                return [...acc, ...promptsData[category].prompts];
+            }
+            return acc;
+        }, []);
+        
+        if (allPrompts.length < 3) {
+            throw new Error('Not enough prompts available');
+        }
+        
+        // Shuffle the prompts array using Fisher-Yates algorithm
+        const shuffledPrompts = [...allPrompts];
+        for (let i = shuffledPrompts.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledPrompts[i], shuffledPrompts[j]] = [shuffledPrompts[j], shuffledPrompts[i]];
+        }
         
         // Get the first 3 prompts
         const selectedPrompts = shuffledPrompts.slice(0, 3);
@@ -332,7 +357,9 @@ async function loadRandomPrompts() {
         // Update the prompt questions and clear the answers
         const promptElements = document.querySelectorAll('.prompt h4');
         promptElements.forEach((element, index) => {
-            element.textContent = selectedPrompts[index];
+            if (selectedPrompts[index]) {
+                element.textContent = selectedPrompts[index];
+            }
         });
         
         // Clear the textareas
@@ -343,5 +370,9 @@ async function loadRandomPrompts() {
     } catch (error) {
         console.error('Error loading prompts:', error);
         alert('Error loading new prompts. Please try again.');
+    } finally {
+        // Restore button state
+        refreshButton.innerHTML = originalButtonText;
+        refreshButton.disabled = false;
     }
 }
