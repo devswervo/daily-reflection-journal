@@ -62,18 +62,6 @@ async function loadBibleQuote() {
     }
 }
 
-async function fetchRandomBibleQuote() {
-    // This is a placeholder. In a real app, you would fetch from a Bible API
-    const quotes = [
-        "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future. - Jeremiah 29:11",
-        "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go. - Joshua 1:9",
-        "Trust in the Lord with all your heart and lean not on your own understanding. - Proverbs 3:5",
-        "I can do all things through Christ who strengthens me. - Philippians 4:13",
-        "The Lord is my shepherd, I lack nothing. - Psalm 23:1"
-    ];
-    return quotes[Math.floor(Math.random() * quotes.length)];
-}
-
 function setupEventListeners() {
     // Save button
     document.getElementById('save-btn').addEventListener('click', saveJournalEntry);
