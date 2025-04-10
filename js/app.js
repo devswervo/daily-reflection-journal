@@ -249,7 +249,7 @@ async function loadJournalPage(pageNumber) {
         }
     }
     
-    // Create a clean, unified layout without containers
+    // Create a clean, unified layout with only the outermost container
     let html = `
         <h3 class="entry-date">${formattedDate}</h3>
         
@@ -257,31 +257,21 @@ async function loadJournalPage(pageNumber) {
             <blockquote>${bibleQuote}</blockquote>
         </div>
         
-        <div class="daily-reflection">
-            <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
-            <div class="emotions">Emotions: ${entry.emotions?.join(', ') || 'None recorded'}</div>
-            <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
-        </div>
+        <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
+        <div class="emotions">Emotions: ${entry.emotions?.join(', ') || 'None recorded'}</div>
+        <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
     `;
     
-    // Add reflection text if it exists
+    // Add reflection text if it exists - as plain paragraph text
     if (entry.reflection && entry.reflection.trim() !== '') {
-        html += `
-            <div class="reflection-text">
-                <p>${entry.reflection}</p>
-            </div>
-        `;
+        html += `<p>${entry.reflection}</p>`;
     }
     
-    // Add prompts if they exist - without questions, just answers as paragraphs
+    // Add prompts if they exist - as plain paragraph text
     if (entry.prompts && entry.prompts.length > 0) {
         entry.prompts.forEach(prompt => {
             if (prompt.answer && prompt.answer.trim() !== '') {
-                html += `
-                    <div class="prompt-answer">
-                        <p>${prompt.answer}</p>
-                    </div>
-                `;
+                html += `<p>${prompt.answer}</p>`;
             }
         });
     }
