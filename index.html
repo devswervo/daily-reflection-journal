@@ -24,104 +24,106 @@
         </header>
 
         <main>
-            <div class="max-w-4xl">
-                <section class="daily-entry">
-                    <div class="bible-quote">
-                        <h2>Verse of the Day</h2>
-                        <blockquote id="bible-quote-text"></blockquote>
-                        <span id="bible-quote-reference" class="verse-reference"></span>
-                    </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl">
+                    <section class="daily-entry">
+                        <div class="bible-quote">
+                            <h2>Verse of the Day</h2>
+                            <blockquote id="bible-quote-text"></blockquote>
+                            <span id="bible-quote-reference" class="verse-reference"></span>
+                        </div>
 
-                    <div class="entry-form">
-                        <div class="check-in-section">
-                            <h2>Daily Check-In</h2>
-                            <div class="mood-section">
-                                <h3>How was your day?</h3>
-                                <div class="rating-options">
-                                    <label><input type="radio" name="mood-rating" value="1"> 1</label>
-                                    <label><input type="radio" name="mood-rating" value="2"> 2</label>
-                                    <label><input type="radio" name="mood-rating" value="3"> 3</label>
-                                    <label><input type="radio" name="mood-rating" value="4"> 4</label>
-                                    <label><input type="radio" name="mood-rating" value="5"> 5</label>
-                                    <label><input type="radio" name="mood-rating" value="6"> 6</label>
-                                    <label><input type="radio" name="mood-rating" value="7"> 7</label>
-                                    <label><input type="radio" name="mood-rating" value="8"> 8</label>
-                                    <label><input type="radio" name="mood-rating" value="9"> 9</label>
-                                    <label><input type="radio" name="mood-rating" value="10"> 10</label>
+                        <div class="entry-form">
+                            <div class="check-in-section">
+                                <h2>Daily Check-In</h2>
+                                <div class="mood-section">
+                                    <h3>How was your day?</h3>
+                                    <div class="rating-options">
+                                        <label><input type="radio" name="mood-rating" value="1"> 1</label>
+                                        <label><input type="radio" name="mood-rating" value="2"> 2</label>
+                                        <label><input type="radio" name="mood-rating" value="3"> 3</label>
+                                        <label><input type="radio" name="mood-rating" value="4"> 4</label>
+                                        <label><input type="radio" name="mood-rating" value="5"> 5</label>
+                                        <label><input type="radio" name="mood-rating" value="6"> 6</label>
+                                        <label><input type="radio" name="mood-rating" value="7"> 7</label>
+                                        <label><input type="radio" name="mood-rating" value="8"> 8</label>
+                                        <label><input type="radio" name="mood-rating" value="9"> 9</label>
+                                        <label><input type="radio" name="mood-rating" value="10"> 10</label>
+                                    </div>
+                                </div>
+
+                                <div class="emotions-section">
+                                    <h3>What emotions did you feel today?</h3>
+                                    <div class="emotion-options">
+                                        <label><input type="checkbox" name="emotions" value="happy"> Happy</label>
+                                        <label><input type="checkbox" name="emotions" value="sad"> Sad</label>
+                                        <label><input type="checkbox" name="emotions" value="angry"> Angry</label>
+                                        <label><input type="checkbox" name="emotions" value="anxious"> Anxious</label>
+                                        <label><input type="checkbox" name="emotions" value="calm"> Calm</label>
+                                        <label><input type="checkbox" name="emotions" value="excited"> Excited</label>
+                                        <label><input type="checkbox" name="emotions" value="tired"> Tired</label>
+                                        <label><input type="checkbox" name="emotions" value="grateful"> Grateful</label>
+                                        <label><input type="checkbox" name="emotions" value="frustrated"> Frustrated</label>
+                                        <label><input type="checkbox" name="emotions" value="peaceful"> Peaceful</label>
+                                    </div>
+                                </div>
+
+                                <div class="prayer-section">
+                                    <h3>Did you pray today?</h3>
+                                    <div class="prayer-options">
+                                        <label><input type="radio" name="prayed-today" value="yes"> Yes</label>
+                                        <label><input type="radio" name="prayed-today" value="no"> No</label>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="emotions-section">
-                                <h3>What emotions did you feel today?</h3>
-                                <div class="emotion-options">
-                                    <label><input type="checkbox" name="emotions" value="happy"> Happy</label>
-                                    <label><input type="checkbox" name="emotions" value="sad"> Sad</label>
-                                    <label><input type="checkbox" name="emotions" value="angry"> Angry</label>
-                                    <label><input type="checkbox" name="emotions" value="anxious"> Anxious</label>
-                                    <label><input type="checkbox" name="emotions" value="calm"> Calm</label>
-                                    <label><input type="checkbox" name="emotions" value="excited"> Excited</label>
-                                    <label><input type="checkbox" name="emotions" value="tired"> Tired</label>
-                                    <label><input type="checkbox" name="emotions" value="grateful"> Grateful</label>
-                                    <label><input type="checkbox" name="emotions" value="frustrated"> Frustrated</label>
-                                    <label><input type="checkbox" name="emotions" value="peaceful"> Peaceful</label>
+                            <div class="prompts-section">
+                                <h2>Self Reflection <span class="optional-text">(optional)</span> <button id="refresh-prompts" class="refresh-btn" title="Get new prompts">🔄</button></h2>
+                                <div class="prompt">
+                                    <h4>What was the highlight of your day?</h4>
+                                    <textarea name="prompt1" rows="3" placeholder="Write your answer here..."></textarea>
+                                </div>
+                                <div class="prompt">
+                                    <h4>What challenged you today?</h4>
+                                    <textarea name="prompt2" rows="3" placeholder="Write your answer here..."></textarea>
+                                </div>
+                                <div class="prompt">
+                                    <h4>What are you grateful for today?</h4>
+                                    <textarea name="prompt3" rows="3" placeholder="Write your answer here..."></textarea>
                                 </div>
                             </div>
 
-                            <div class="prayer-section">
-                                <h3>Did you pray today?</h3>
-                                <div class="prayer-options">
-                                    <label><input type="radio" name="prayed-today" value="yes"> Yes</label>
-                                    <label><input type="radio" name="prayed-today" value="no"> No</label>
-                                </div>
+                            <div class="reflection-section">
+                                <h2>Journal</h2>
+                                <textarea id="reflection" rows="6" placeholder="Write your thoughts here..."></textarea>
+                            </div>
+
+                            <div class="image-upload">
+                                <h3>Add Images</h3>
+                                <input type="file" id="image-upload" accept="image/*" multiple>
+                                <div id="image-preview" class="image-preview"></div>
+                            </div>
+
+                            <div class="actions">
+                                <button id="save-btn">Save Entry</button>
+                                <button id="clear-btn">Clear</button>
                             </div>
                         </div>
+                    </section>
 
-                        <div class="prompts-section">
-                            <h2>Self Reflection <span class="optional-text">(optional)</span> <button id="refresh-prompts" class="refresh-btn" title="Get new prompts">🔄</button></h2>
-                            <div class="prompt">
-                                <h4>What was the highlight of your day?</h4>
-                                <textarea name="prompt1" rows="3" placeholder="Write your answer here..."></textarea>
-                            </div>
-                            <div class="prompt">
-                                <h4>What challenged you today?</h4>
-                                <textarea name="prompt2" rows="3" placeholder="Write your answer here..."></textarea>
-                            </div>
-                            <div class="prompt">
-                                <h4>What are you grateful for today?</h4>
-                                <textarea name="prompt3" rows="3" placeholder="Write your answer here..."></textarea>
-                            </div>
+                    <section class="journal-view">
+                        <h2>Journal Entries</h2>
+                        <div class="journal-controls">
+                            <button id="prev-page">← Previous</button>
+                            <input type="number" id="page-number" min="1" placeholder="Page #">
+                            <button id="go-to-page">Go</button>
+                            <button id="next-page">Next →</button>
                         </div>
-
-                        <div class="reflection-section">
-                            <h2>Journal</h2>
-                            <textarea id="reflection" rows="6" placeholder="Write your thoughts here..."></textarea>
+                        <div class="journal-page">
+                            <div id="journal-content"></div>
                         </div>
-
-                        <div class="image-upload">
-                            <h3>Add Images</h3>
-                            <input type="file" id="image-upload" accept="image/*" multiple>
-                            <div id="image-preview" class="image-preview"></div>
-                        </div>
-
-                        <div class="actions">
-                            <button id="save-btn">Save Entry</button>
-                            <button id="clear-btn">Clear</button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="journal-view">
-                    <h2>Journal Entries</h2>
-                    <div class="journal-controls">
-                        <button id="prev-page">← Previous</button>
-                        <input type="number" id="page-number" min="1" placeholder="Page #">
-                        <button id="go-to-page">Go</button>
-                        <button id="next-page">Next →</button>
-                    </div>
-                    <div class="journal-page">
-                        <div id="journal-content"></div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </main>
     </div>
