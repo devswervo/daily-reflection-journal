@@ -40,40 +40,25 @@ function displayCurrentDate() {
 
 async function loadBibleQuote() {
     try {
-        // Get today's date in YYYY-MM-DD format
-        const today = new Date().toISOString().split('T')[0];
-        
-        // Try to get the Bible quote for today
-        let quote = await journalDB.getBibleQuote(today);
-        
-        // If no quote exists for today, generate a new one
-        if (!quote) {
-            // Get a random Bible quote
-            quote = await fetchRandomBibleQuote();
-            
-            // Save the quote for today
-            await journalDB.saveBibleQuote(quote, today);
-        }
-        
+        const verse = await bibleVerseProvider.getTodayVerse();
         const bibleQuoteText = document.getElementById('bible-quote-text');
+        const bibleQuoteReference = document.getElementById('bible-quote-reference');
         
-        // Ensure the quote has quotation marks
-        if (!quote.includes('"') && !quote.includes('"')) {
-            // If the quote doesn't have quotation marks, add them
-            const quoteParts = quote.split(' - ');
-            if (quoteParts.length > 1) {
-                // If there's a citation (e.g., " - Jeremiah 29:11")
-                quote = `"${quoteParts[0]}" - ${quoteParts[1]}`;
-            } else {
-                // If there's no citation
-                quote = `"${quote}"`;
-            }
+        if (bibleQuoteText && bibleQuoteReference) {
+            bibleQuoteText.textContent = verse.text;
+            bibleQuoteReference.textContent = verse.reference;
+        } else {
+            console.error('Bible quote elements not found in the DOM');
         }
-        
-        bibleQuoteText.textContent = quote;
     } catch (error) {
         console.error('Error loading Bible quote:', error);
-        document.getElementById('bible-quote-text').textContent = "\"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.\" - Jeremiah 29:11";
+        const bibleQuoteText = document.getElementById('bible-quote-text');
+        const bibleQuoteReference = document.getElementById('bible-quote-reference');
+        
+        if (bibleQuoteText && bibleQuoteReference) {
+            bibleQuoteText.textContent = "The Lord is my shepherd; I shall not want.";
+            bibleQuoteReference.textContent = "Psalm 23:1";
+        }
     }
 }
 
