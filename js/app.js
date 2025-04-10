@@ -233,12 +233,28 @@ async function loadJournalPage(pageNumber) {
         day: 'numeric'
     });
     
+    // Process the Bible quote to ensure it has quotation marks
+    let bibleQuote = entry.bibleQuote || 'No Bible quote for this day.';
+    
+    // Add quotation marks to the Bible quote if they don't already exist
+    if (!bibleQuote.includes('"') && !bibleQuote.includes('"')) {
+        // If the quote doesn't have quotation marks, add them
+        const quoteParts = bibleQuote.split(' - ');
+        if (quoteParts.length > 1) {
+            // If there's a citation (e.g., " - Jeremiah 29:11")
+            bibleQuote = `"${quoteParts[0]}" - ${quoteParts[1]}`;
+        } else {
+            // If there's no citation
+            bibleQuote = `"${bibleQuote}"`;
+        }
+    }
+    
     // Create a clean, unified layout without containers
     let html = `
         <h3 class="entry-date">${formattedDate}</h3>
         
         <div class="bible-quote">
-            <blockquote>${entry.bibleQuote || 'No Bible quote for this day.'}</blockquote>
+            <blockquote>${bibleQuote}</blockquote>
         </div>
         
         <div class="daily-reflection">
