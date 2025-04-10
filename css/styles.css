@@ -393,11 +393,11 @@ textarea:focus {
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-color);
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 100%;
 }
 
 .journal-entry {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem;
     background-color: var(--background-color);
@@ -845,14 +845,14 @@ textarea {
 
 /* Journal Entry specific styles */
 .journal-entry {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     min-height: 500px;
 }
 
 /* Journal Page specific styles */
 .journal-page {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     min-height: 500px;
     position: relative;
