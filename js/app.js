@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    updateDateDisplay();
     initializeApp();
 });
 
@@ -253,4 +254,11 @@ async function loadJournalPage(pageNumber) {
     // Update navigation buttons
     document.getElementById('prev-page').disabled = pageNumber <= 1;
     document.getElementById('next-page').disabled = pageNumber >= totalPages;
+}
+
+function updateDateDisplay() {
+    const dateDisplay = document.querySelector('.date-display');
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateDisplay.textContent = now.toLocaleDateString(undefined, options);
 }

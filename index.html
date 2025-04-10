@@ -14,19 +14,22 @@
     <div class="container">
         <header>
             <h1>Daily Reflection Journal</h1>
-            <button id="theme-toggle">🌙</button>
+            <div class="date-display"></div>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">��</span>
+            </button>
         </header>
 
         <main>
             <section class="daily-entry">
                 <div class="bible-quote">
-                    <h2>Today's Bible Quote</h2>
+                    <h2>Bible Quote</h2>
                     <blockquote id="bible-quote-text"></blockquote>
                 </div>
 
                 <div class="entry-form">
-                    <h2>Today's Reflection</h2>
-                    <p id="current-date"></p>
+                    <h2>Reflection</h2>
+                    <textarea id="reflection" rows="6" placeholder="Write your thoughts here..."></textarea>
 
                     <div class="mood-section">
                         <h3>How was your day?</h3>
