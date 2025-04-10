@@ -106,12 +106,11 @@ h1 {
 
 /* Bible Quote Section */
 .bible-quote {
-    background-color: var(--secondary-color);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    border-left: 4px solid var(--primary-color);
-    box-shadow: var(--card-shadow);
+    background: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
 }
 
 .bible-quote h2 {
@@ -122,10 +121,8 @@ h1 {
 
 .bible-quote blockquote {
     font-style: italic;
-    color: var(--text-color);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    padding-left: 1rem;
+    margin: 0;
+    padding: 0;
     border-left: none;
 }
 
@@ -358,20 +355,60 @@ textarea:focus {
     line-height: 1.6;
 }
 
-/* Remove boxes and lines from prompt answers */
-.journal-entry .prompt-answer {
-    margin: 1rem 0;
+/* Journal-like styling for prompts and reflection */
+.entry-prompts {
+    margin: 1.5rem 0;
     padding: 0;
-    border: none;
-    background: none;
+    background-color: transparent;
+    border-radius: 0;
 }
 
-.journal-entry .prompt-answer p {
+.entry-prompts .prompt {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.entry-prompts .prompt:last-child {
+    border-bottom: none;
+}
+
+.entry-prompts h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.entry-prompts p {
     margin: 0.5rem 0;
+    line-height: 1.6;
+    white-space: pre-wrap;
 }
 
-/* Keep boxes for daily reflection */
-.journal-entry .daily-reflection {
+/* Reflection section styling */
+.reflection-section {
+    margin: 1.5rem 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.reflection-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.reflection-section p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* Keep the mood section styling */
+.mood-section {
     background: var(--secondary-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -379,53 +416,10 @@ textarea:focus {
     margin: 1rem 0;
 }
 
-.journal-entry .daily-reflection h4 {
+.mood-section h4 {
     color: var(--primary-color);
     margin-bottom: 0.75rem;
     font-weight: 600;
-}
-
-.entry-prompts {
-    margin: 1.25rem 0;
-    padding: 1.25rem;
-    background-color: var(--secondary-color);
-    border-radius: 8px;
-}
-
-.entry-prompts .prompt {
-    margin-bottom: 1.25rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.entry-prompts .prompt:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.entry-prompts h4 {
-    color: var(--text-color);
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-}
-
-.entry-prompts p {
-    color: var(--text-color);
-    line-height: 1.5;
-    white-space: pre-wrap;
-    margin: 0;
-    padding: 1rem;
-    background-color: var(--background-color);
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
-
-.mood-section {
-    margin: 1.25rem 0;
-    padding: 1.25rem;
-    background-color: var(--secondary-color);
-    border-radius: 8px;
 }
 
 .mood-rating,
@@ -553,20 +547,6 @@ footer p:last-child {
     margin-top: 0.5rem;
     font-size: 0.85rem;
     opacity: 0.9;
-}
-
-/* Reflection Section */
-.reflection-section {
-    background-color: var(--background-color);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--card-shadow);
-    margin-bottom: 1.5rem;
-}
-
-.reflection-section textarea {
-    margin-top: 1rem;
 }
 
 /* Check-In Section */
