@@ -115,7 +115,7 @@ h1 {
 }
 
 .bible-quote blockquote {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-style: italic;
     margin: 0.5rem 0;
     color: var(--text-color);
@@ -128,7 +128,7 @@ h1 {
     font-weight: 500;
     color: var(--primary-color);
     margin-top: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* Daily Entry Form */
@@ -320,7 +320,7 @@ textarea:focus {
 }
 
 .bible-quote blockquote {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-style: italic;
     margin: 0.5rem 0;
     color: var(--text-color);
@@ -333,7 +333,7 @@ textarea:focus {
     font-weight: 500;
     color: var(--primary-color);
     margin-top: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .mood-rating, .emotions, .prayer-status {
