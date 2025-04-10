@@ -44,7 +44,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -138,6 +138,7 @@ h1 {
     border-radius: 12px;
     margin-bottom: 2rem;
     box-shadow: var(--card-shadow);
+    width: 100%;
 }
 
 .entry-form {
@@ -862,4 +863,11 @@ textarea {
 .bible-quote {
     border-left: 4px solid var(--primary-color);
     margin-bottom: 2rem;
+}
+
+/* Max width container */
+.max-w-4xl {
+    max-width: 56rem; /* 896px */
+    margin-left: auto;
+    margin-right: auto;
 }
