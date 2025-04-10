@@ -294,10 +294,7 @@ textarea:focus {
 
 /* Journal View */
 .journal-view {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--card-shadow);
+    padding: 20px;
 }
 
 .journal-controls {
@@ -348,12 +345,7 @@ textarea:focus {
 }
 
 .bible-quote {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
     margin-bottom: 20px;
-    border-left: 4px solid #6c757d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .bible-quote blockquote {
@@ -365,12 +357,7 @@ textarea:focus {
 }
 
 .daily-reflection {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
     margin-bottom: 20px;
-    border-left: 4px solid #6c757d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .mood-rating, .emotions, .prayer-status {
@@ -379,12 +366,7 @@ textarea:focus {
 }
 
 .reflection-text {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
     margin-bottom: 20px;
-    border-left: 4px solid #6c757d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .reflection-text p {
@@ -398,12 +380,7 @@ textarea:focus {
 }
 
 .prompt-answer {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
     margin-bottom: 15px;
-    border-left: 4px solid #6c757d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .prompt-answer p {

@@ -233,23 +233,32 @@ async function loadJournalPage(pageNumber) {
         day: 'numeric'
     });
     
+    // Create a clean, unified layout without containers
     let html = `
-        <div class="journal-entry">
-            <h3>${formattedDate}</h3>
-            <div class="bible-quote">
-                <blockquote>${entry.bibleQuote || 'No Bible quote for this day.'}</blockquote>
-            </div>
-            <div class="mood-section">
-                <h4>Daily Reflection</h4>
-                <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
-                <div class="emotions">Emotions: ${entry.emotions?.join(', ') || 'None recorded'}</div>
-                <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
-            </div>
+        <h3 class="entry-date">${formattedDate}</h3>
+        
+        <div class="bible-quote">
+            <blockquote>${entry.bibleQuote || 'No Bible quote for this day.'}</blockquote>
+        </div>
+        
+        <div class="daily-reflection">
+            <div class="mood-rating">Mood: ${entry.moodRating || 'Not rated'}/10</div>
+            <div class="emotions">Emotions: ${entry.emotions?.join(', ') || 'None recorded'}</div>
+            <div class="prayer-status">Prayed Today: ${entry.prayedToday ? 'Yes' : 'No'}</div>
+        </div>
     `;
     
-    // Add prompts if they exist - now without questions, just answers as paragraphs
+    // Add reflection text if it exists
+    if (entry.reflection && entry.reflection.trim() !== '') {
+        html += `
+            <div class="reflection-text">
+                <p>${entry.reflection}</p>
+            </div>
+        `;
+    }
+    
+    // Add prompts if they exist - without questions, just answers as paragraphs
     if (entry.prompts && entry.prompts.length > 0) {
-        html += '<div class="entry-prompts">';
         entry.prompts.forEach(prompt => {
             if (prompt.answer && prompt.answer.trim() !== '') {
                 html += `
@@ -259,17 +268,6 @@ async function loadJournalPage(pageNumber) {
                 `;
             }
         });
-        html += '</div>';
-    }
-    
-    // Add reflection text if it exists
-    if (entry.reflection && entry.reflection.trim() !== '') {
-        html += `
-            <div class="reflection-section">
-                <h4>Journal</h4>
-                <p>${entry.reflection}</p>
-            </div>
-        `;
     }
     
     // Add images section if there are images
@@ -281,7 +279,6 @@ async function loadJournalPage(pageNumber) {
         html += '</div>';
     }
     
-    html += '</div>';
     journalContent.innerHTML = html;
     
     // Update navigation buttons
