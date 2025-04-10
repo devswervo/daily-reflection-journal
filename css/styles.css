@@ -636,3 +636,12 @@ footer p:last-child {
 .reflection-section textarea {
     margin-top: 1rem;
 }
+
+/* Optional text styling */
+.optional-text {
+    font-size: 0.7em;
+    font-weight: normal;
+    color: var(--text-color);
+    opacity: 0.8;
+    vertical-align: middle;
+}
