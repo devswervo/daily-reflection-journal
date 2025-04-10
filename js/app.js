@@ -108,6 +108,7 @@ async function saveJournalEntry() {
         .map(input => input.value);
     const prayedToday = document.querySelector('input[name="prayed-today"]:checked')?.value === 'yes';
     const bibleQuote = document.getElementById('bible-quote-text').textContent;
+    const reflection = document.getElementById('reflection').value;
     
     // Get prompts
     const prompts = [
@@ -135,7 +136,8 @@ async function saveJournalEntry() {
         emotions,
         prayedToday,
         bibleQuote,
-        prompts
+        prompts,
+        reflection
     };
     
     const images = Array.from(document.querySelectorAll('#image-preview img')).map(img => ({
@@ -245,6 +247,16 @@ async function loadJournalPage(pageNumber) {
             }
         });
         html += '</div>';
+    }
+    
+    // Add reflection text if it exists
+    if (entry.reflection && entry.reflection.trim() !== '') {
+        html += `
+            <div class="reflection-section">
+                <h4>Journal</h4>
+                <p>${entry.reflection}</p>
+            </div>
+        `;
     }
     
     // Add images section if there are images
